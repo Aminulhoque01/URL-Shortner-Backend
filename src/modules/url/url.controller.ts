@@ -15,6 +15,12 @@ const createShortUrl = async (req: any, res: Response) => {
   }
 };
 
+const getUserUrls = async (req: any, res: Response) => {
+  const urls = await UrlService.getUserUrlsService(req.user.userId);
+  res.json(urls);
+};
+
 export const UrlController={
   createShortUrl,
+  getUserUrls
 }

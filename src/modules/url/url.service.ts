@@ -14,6 +14,11 @@ const createShortUrlService = async (
   return Url.create({ userId, originalUrl, shortCode });
 };
 
+const getUserUrlsService = (userId: string) => {
+  return Url.find({ userId }).sort({ createdAt: -1 });
+}
+
 export const UrlService={
-  createShortUrlService
+  createShortUrlService,
+  getUserUrlsService
 }
