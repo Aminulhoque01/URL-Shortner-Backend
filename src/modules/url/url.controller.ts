@@ -20,7 +20,13 @@ const getUserUrls = async (req: any, res: Response) => {
   res.json(urls);
 };
 
+const deleteUrl = async (req: any, res: Response) => {
+  await UrlService.deleteUrlService(req.params.id);
+  res.json({ message: "Deleted" });
+};
+
 export const UrlController={
   createShortUrl,
-  getUserUrls
+  getUserUrls,
+  deleteUrl
 }

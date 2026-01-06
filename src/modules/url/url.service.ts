@@ -18,7 +18,12 @@ const getUserUrlsService = (userId: string) => {
   return Url.find({ userId }).sort({ createdAt: -1 });
 }
 
+ const deleteUrlService = (id: string) => {
+  return Url.findByIdAndDelete(id);
+};
+
 export const UrlService={
   createShortUrlService,
-  getUserUrlsService
+  getUserUrlsService,
+  deleteUrlService
 }
