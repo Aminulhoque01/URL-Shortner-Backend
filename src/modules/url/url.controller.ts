@@ -30,7 +30,7 @@ const deleteUrl = async (req: any, res: Response) => {
 const redirectUrl = async (req: any, res: Response) => {
   try {
     const originalUrl = await UrlService.redirectService(req.params.code);
-    console.log(originalUrl)
+   
     res.redirect(originalUrl);
   } catch {
     res.status(404).json({ message: "Not found" });
