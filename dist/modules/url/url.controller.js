@@ -25,7 +25,6 @@ const deleteUrl = async (req, res) => {
 const redirectUrl = async (req, res) => {
     try {
         const originalUrl = await url_service_1.UrlService.redirectService(req.params.code);
-        console.log(originalUrl);
         res.redirect(originalUrl);
     }
     catch {
