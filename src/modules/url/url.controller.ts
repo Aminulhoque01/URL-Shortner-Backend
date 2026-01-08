@@ -1,5 +1,5 @@
 import { Response } from "express";
-import { UrlService } from "./url.service";
+import { UrlService } from "./url.service.js";
 
 const createShortUrl = async (req: any, res: Response) => {
   try {

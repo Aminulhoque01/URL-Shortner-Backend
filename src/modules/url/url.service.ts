@@ -1,5 +1,5 @@
-import { generateShortCode } from "../../utils/generateShortCode";
-import { Url } from "./url.model";
+import { generateShortCode } from "../../utils/generateShortCode.js";
+import { Url } from "./url.model.js";
 
 
 const createShortUrlService = async (

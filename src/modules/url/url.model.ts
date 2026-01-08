@@ -1,5 +1,5 @@
 import { Schema, model } from "mongoose";
-import { IUrl } from "./url.interface";
+import { IUrl } from "./url.interface.js";
 
 const urlSchema = new Schema<IUrl>(
   {
