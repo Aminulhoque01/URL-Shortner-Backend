@@ -8,4 +8,6 @@ router.post("/", protect, UrlController.createShortUrl);
 router.get("/", protect, UrlController.getUserUrls);
 router.delete("/:id", protect, UrlController.deleteUrl);
 
+router.get("/:shortCode", UrlController.redirectUrl);
+
 export default router;

@@ -5,8 +5,8 @@ const urlSchema = new Schema<IUrl>(
   {
     userId: { type: Schema.Types.ObjectId, ref: "User" },
     originalUrl: { type: String, required: true },
-    shortCode: { type: String, unique: true },
-    clicks: { type: Number, default: 0 }
+    shortCode: { type: String, unique: true, required: true },
+    clicks: { type: Number, default: 0 },
   },
   { timestamps: true }
 );

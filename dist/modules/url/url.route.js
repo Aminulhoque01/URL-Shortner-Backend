@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const auth_middleware_1 = require("../../middlewares/auth.middleware");
+const url_controller_1 = require("./url.controller");
+const router = (0, express_1.Router)();
+router.post("/", auth_middleware_1.protect, url_controller_1.UrlController.createShortUrl);
+router.get("/", auth_middleware_1.protect, url_controller_1.UrlController.getUserUrls);
+router.delete("/:id", auth_middleware_1.protect, url_controller_1.UrlController.deleteUrl);
+router.get("/:shortCode", url_controller_1.UrlController.redirectUrl);
+exports.default = router;

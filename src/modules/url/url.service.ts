@@ -22,8 +22,20 @@ const getUserUrlsService = (userId: string) => {
   return Url.findByIdAndDelete(id);
 };
 
+const redirectService = async (code: string) => {
+  const url = await Url.findOne({ shortCode: code });
+  console.log(url)
+  if (!url) throw new Error("Not found");
+
+  url.clicks += 1;
+  await url.save();
+
+  return url.originalUrl;
+};
+
 export const UrlService={
   createShortUrlService,
   getUserUrlsService,
-  deleteUrlService
+  deleteUrlService,
+  redirectService
 }
